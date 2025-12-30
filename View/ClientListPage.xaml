@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="developer_evaluation_btg.View.ClientListPage"
+             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
+             xmlns:model="clr-namespace:developer_evaluation_btg.Model"
+             xmlns:viewmodel="clr-namespace:developer_evaluation_btg.ViewModel"             
+             x:DataType="viewmodel:ClientListViewModel"
+             Title="{Binding Title}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- 10% -->
+            <ColumnDefinition Width="8*" />
+            <!-- 80% -->
+            <ColumnDefinition Width="*" />
+            <!-- 10% -->
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button Text="Add Client"
+                    Command="{Binding AddClientCommand}">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="FAS"
+                         Glyph="&#xf067;"
+                         Size="18" />
+                </Button.ImageSource>
+            </Button>
+
+            <dg:DataGrid 
+                     x:Name="DataGridRef"
+                     Grid.Row="1"
+                     ItemsSource="{Binding Clients}"
+                     SelectionMode="Single"
+                     RowHeight="50"
+                     HeaderHeight="50"
+                     HeaderBackground="LightCyan">
+
+                <dg:DataGrid.NoDataView>
+                    <Label Text="No clients were registered!"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="20"
+                           Padding="50"
+                           FontAttributes="Bold" />
+                </dg:DataGrid.NoDataView>
+
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="ID"
+                       PropertyName="ID"
+                       Width="1*" />
+
+                        <dg:DataGridColumn Title="Name"
+                       PropertyName="Name"
+                       Width="2*" />
+
+                        <dg:DataGridColumn Title="LastName"
+                       PropertyName="LastName"
+                       Width="2*" />
+
+                        <dg:DataGridColumn Title="Age"
+                       PropertyName="Age"
+                       Width="1*" />
+
+                        <dg:DataGridColumn Title="Address"
+                       PropertyName="Address"
+                       Width="3*" />
+
+                    <!-- EDIT -->
+                    <dg:DataGridColumn Title="" Width="0.8*">
+                        <dg:DataGridColumn.CellTemplate>
+                            <DataTemplate>
+                                <ImageButton BackgroundColor="Black"
+                                 Command="{Binding BindingContext.EditClientCommand, Source={x:Reference DataGridRef}}"
+                                 CommandParameter="{Binding .}">
+                                    <ImageButton.Source>
+                                        <FontImageSource FontFamily="FAS"
+                                             Glyph="&#xf044;"
+                                             Size="18" />
+                                    </ImageButton.Source>
+                                </ImageButton>
+                            </DataTemplate>
+                        </dg:DataGridColumn.CellTemplate>
+                    </dg:DataGridColumn>
+
+                    <!-- DELETE -->
+                    <dg:DataGridColumn Title="" Width="0.8*">
+                        <dg:DataGridColumn.CellTemplate>
+                            <DataTemplate>
+                                <ImageButton BackgroundColor="black"
+                                 Command="{Binding BindingContext.DeleteClientCommand, Source={x:Reference DataGridRef}}"
+                                 CommandParameter="{Binding .}">
+                                    <ImageButton.Source>
+                                        <FontImageSource FontFamily="FAS"
+                                             Glyph="&#xf1f8;"
+                                             Size="18" />
+                                    </ImageButton.Source>
+                                </ImageButton>
+                            </DataTemplate>
+                        </dg:DataGridColumn.CellTemplate>
+                    </dg:DataGridColumn>
+
+                </dg:DataGrid.Columns>
+
+            </dg:DataGrid>
+        </Grid>
+    </Grid>
+
+
+
+</ContentPage>

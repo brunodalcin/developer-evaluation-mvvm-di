@@ -1,0 +1,29 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="developer_evaluation_btg.View.ClientDetailPage"
+             BackgroundColor="#80000000"
+             Padding="0">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center">
+        <Frame BackgroundColor="Black"
+               CornerRadius="10"
+               Padding="20"
+               HasShadow="True"
+               WidthRequest="300">
+
+            <StackLayout Spacing="10">
+
+                <Entry Placeholder="Name" Text="{Binding Client.Name}" />
+                <Entry Placeholder="Last Name" Text="{Binding Client.LastName}" />
+                <Entry Placeholder="Age" Text="{Binding Client.Age}" Keyboard="Numeric" />
+                <Entry Placeholder="Address" Text="{Binding Client.Address}" />
+
+                <Button Text="Save" Command="{Binding SaveClientCommand}" />
+                <Button Text="Cancel" Command="{Binding CancelCommand}" />
+
+            </StackLayout>
+
+        </Frame>
+    </Grid>
+    
+</ContentPage>
