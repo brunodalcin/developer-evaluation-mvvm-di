@@ -21,10 +21,10 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>developer-evaluation-btg</ApplicationTitle>
+		<ApplicationTitle>developer-evaluation-mvvm-di</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.developerevaluationbtg</ApplicationId>
+		<ApplicationId>com.companyname.developerevaluationmvvmdi</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
