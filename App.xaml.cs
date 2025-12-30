@@ -1,6 +1,6 @@
-﻿using developer_evaluation_btg.View;
+﻿using developer_evaluation_mvvm_di.View;
 
-namespace developer_evaluation_btg
+namespace developer_evaluation_mvvm_di
 {
     public partial class App : Application
     {

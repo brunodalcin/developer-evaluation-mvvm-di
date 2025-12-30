@@ -1,11 +1,11 @@
-﻿using developer_evaluation_btg.Model;
+﻿using developer_evaluation_mvvm_di.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace developer_evaluation_btg.Services
+namespace developer_evaluation_mvvm_di.Services
 {
     public interface IClientService
     {

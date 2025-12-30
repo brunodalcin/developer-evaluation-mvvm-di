@@ -2,7 +2,7 @@ using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace developer_evaluation_btg
+namespace developer_evaluation_mvvm_di
 {
     internal class Program : MauiApplication
     {

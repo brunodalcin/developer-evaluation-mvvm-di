@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace developer_evaluation_btg.Model
+namespace developer_evaluation_mvvm_di.Model
 {
     public class Client
     {

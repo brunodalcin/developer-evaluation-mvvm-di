@@ -5,7 +5,7 @@ using WinRT.Interop;
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
 
-namespace developer_evaluation_btg.WinUI
+namespace developer_evaluation_mvvm_di.WinUI
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

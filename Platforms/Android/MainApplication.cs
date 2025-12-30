@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace developer_evaluation_btg
+namespace developer_evaluation_mvvm_di
 {
     [Application]
     public class MainApplication : MauiApplication

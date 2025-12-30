@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace developer_evaluation_btg
+namespace developer_evaluation_mvvm_di
 {
     public class Program
     {

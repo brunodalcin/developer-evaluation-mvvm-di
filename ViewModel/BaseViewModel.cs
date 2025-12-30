@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace developer_evaluation_btg.ViewModel
+namespace developer_evaluation_mvvm_di.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

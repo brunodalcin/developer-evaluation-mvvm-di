@@ -1,10 +1,10 @@
-﻿using developer_evaluation_btg.Data;
-using developer_evaluation_btg.Services;
-using developer_evaluation_btg.View;
-using developer_evaluation_btg.ViewModel;
+﻿using developer_evaluation_mvvm_di.Data;
+using developer_evaluation_mvvm_di.Services;
+using developer_evaluation_mvvm_di.View;
+using developer_evaluation_mvvm_di.ViewModel;
 using Microsoft.Extensions.Logging;
 
-namespace developer_evaluation_btg
+namespace developer_evaluation_mvvm_di
 {
     public static class MauiProgram
     {
@@ -17,6 +17,7 @@ namespace developer_evaluation_btg
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("fa-solid-900.ttf", "FAS"); 
                 });
 
 #if DEBUG

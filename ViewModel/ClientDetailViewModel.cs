@@ -1,10 +1,10 @@
-﻿using developer_evaluation_btg.Model;
-using developer_evaluation_btg.Services;
+﻿using developer_evaluation_mvvm_di.Model;
+using developer_evaluation_mvvm_di.Services;
 using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace developer_evaluation_btg.ViewModel
+namespace developer_evaluation_mvvm_di.ViewModel
 {
     [QueryProperty(nameof(Client), "Client")]
     public class ClientDetailViewModel : BaseViewModel

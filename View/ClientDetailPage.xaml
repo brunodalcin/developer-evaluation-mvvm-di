@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="developer_evaluation_btg.View.ClientDetailPage"
+             x:Class="developer_evaluation_mvvm_di.View.ClientDetailPage"
              BackgroundColor="#80000000"
              Padding="0">
 

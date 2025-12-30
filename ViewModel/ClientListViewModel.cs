@@ -1,9 +1,9 @@
-﻿using developer_evaluation_btg.Model;
-using developer_evaluation_btg.Services;
-using developer_evaluation_btg.View;
+﻿using developer_evaluation_mvvm_di.Model;
+using developer_evaluation_mvvm_di.Services;
+using developer_evaluation_mvvm_di.View;
 using System.Collections.ObjectModel;
 
-namespace developer_evaluation_btg.ViewModel
+namespace developer_evaluation_mvvm_di.ViewModel
 {
     public partial class ClientListViewModel : BaseViewModel
     {
@@ -14,7 +14,8 @@ namespace developer_evaluation_btg.ViewModel
         public bool IsClientFormVisible { get; set; }
         public Command GetClientsCommand { get; }
         public Command AddClientCommand { get; }
-        public Command EditClientCommand { get; }
+        public Command UpdateClientCommand { get; }
+        public Command DeleteClientCommand { get; }
         public ClientListViewModel(IClientService clientService)
         {
             Title = "Client List";
@@ -34,10 +35,25 @@ namespace developer_evaluation_btg.ViewModel
                 await Shell.Current.Navigation.PushModalAsync(new ClientDetailPage(vm));
             });
 
-            EditClientCommand = new Command<Client>(async client =>
+            UpdateClientCommand = new Command<Client>(async client =>
             {
                 var vm = new ClientDetailViewModel(clientService, Clients, client); // have 'client' = edit
                 await Shell.Current.Navigation.PushModalAsync(new ClientDetailPage(vm));
+            });
+
+            DeleteClientCommand = new Command<Client>(async client =>
+            {
+                if (client == null) return;
+
+                bool isDeleting = await Application.Current.MainPage.DisplayAlert("Delete",
+                    $"Are you sure you want to delete {client.Name}?", "OK", "Cancel");
+
+                if (!isDeleting)
+                    return;
+
+                await clientService.Delete(client.ID);
+                Clients.Remove(client);
+                //need to refresh data ?
             });
         }
 

@@ -1,9 +1,9 @@
-﻿using developer_evaluation_btg.Data;
-using developer_evaluation_btg.Model;
+﻿using developer_evaluation_mvvm_di.Data;
+using developer_evaluation_mvvm_di.Model;
 using SQLite;
 using System;
 
-namespace developer_evaluation_btg.Services
+namespace developer_evaluation_mvvm_di.Services
 {
     public class ClientService : IClientService
     {

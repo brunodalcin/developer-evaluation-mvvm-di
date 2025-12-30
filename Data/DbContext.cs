@@ -1,4 +1,4 @@
-﻿using developer_evaluation_btg.Model;
+﻿using developer_evaluation_mvvm_di.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Microsoft.Maui.Storage;
 
-namespace developer_evaluation_btg.Data
+namespace developer_evaluation_mvvm_di.Data
 {
     public class DbContext
     {

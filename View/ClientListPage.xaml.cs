@@ -1,13 +1,13 @@
-using developer_evaluation_btg.ViewModel;
+using developer_evaluation_mvvm_di.ViewModel;
 
-namespace developer_evaluation_btg.View;
+namespace developer_evaluation_mvvm_di.View;
 
 public partial class ClientListPage : ContentPage
 {
 	public ClientListPage(ClientListViewModel vm)
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = vm;        
     }
     protected override void OnAppearing()
     {
