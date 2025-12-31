@@ -42,4 +42,38 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+
+    <Color x:Key="Text">#2f353b</Color>
+    <Color x:Key="LightGray">#edf3f7</Color>
+    <Color x:Key="Gray">#8c9092</Color>
+
+    <Style x:Key="MainGrid" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{StaticResource LightGray}"/>
+    </Style>
+
+    <Style x:Key="DataGrid" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+    </Style>
+
+    <Style TargetType="Label">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource Text}" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+        <Setter Property="TextColor" Value="{StaticResource Text}" />
+    </Style>
+
+    <Style TargetType="ImageButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+    </Style>
+
+    <Style TargetType="FontImageSource">
+        <Setter Property="Color" Value="{StaticResource Gray}" />
+        <Setter Property="Size" Value="22" />
+        <Setter Property="FontFamily" Value="FAS" />
+    </Style>
+
 </ResourceDictionary>

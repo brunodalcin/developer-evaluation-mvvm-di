@@ -35,15 +35,18 @@ namespace developer_evaluation_mvvm_di.ViewModel
                 {
                     await clientService.Update(Client);
 
-                    // Atualiza a coleção para refletir a UI
-                    var index = clients.IndexOf(clients.First(c => c.ID == Client.ID));
-                    if (index >= 0)
-                        clients[index] = Client;
+                    await Application.Current.MainPage.DisplayAlert("Update", $"Client successfully updated!","OK");
+
+                    //var index = clients.IndexOf(clients.First(c => c.ID == Client.ID));
+                    //if (index >= 0)
+                    //    clients[index] = Client;
                 }
                 else
                 {
                     await clientService.Create(Client);
-                    clients.Add(Client); // adiciona na UI
+
+                    await Application.Current.MainPage.DisplayAlert("Create", $"Client successfully created!","OK");
+                    //clients.Add(Client); // adiciona na UI
                 }
 
                 await Shell.Current.Navigation.PopModalAsync();

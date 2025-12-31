@@ -46,14 +46,13 @@ namespace developer_evaluation_mvvm_di.ViewModel
                 if (client == null) return;
 
                 bool isDeleting = await Application.Current.MainPage.DisplayAlert("Delete",
-                    $"Are you sure you want to delete {client.Name}?", "OK", "Cancel");
+                    $"Are you sure you want to delete the client: {client.Name}?", "OK", "Cancel");
 
                 if (!isDeleting)
                     return;
 
                 await clientService.Delete(client.ID);
                 Clients.Remove(client);
-                //need to refresh data ?
             });
         }
 

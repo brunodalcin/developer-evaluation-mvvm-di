@@ -2,26 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="developer_evaluation_mvvm_di.View.ClientListPage"
-             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
              xmlns:model="clr-namespace:developer_evaluation_mvvm_di.Model"
              xmlns:viewmodel="clr-namespace:developer_evaluation_mvvm_di.ViewModel"             
              x:DataType="viewmodel:ClientListViewModel"
              Title="{Binding Title}">
 
-    <ContentPage.Resources>
-        <Color x:Key="txtColor">Black</Color>
-        <Color x:Key="bgColor">lightcyan</Color>
-
-        <Style TargetType="Label">
-            <Setter Property="TextColor" Value="{DynamicResource txtColor}" />
-            <Setter Property="BackgroundColor" Value="{DynamicResource bgColor}" />
-        </Style>
-    </ContentPage.Resources>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="8*" />
+            <ColumnDefinition Width="6*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -31,14 +20,13 @@
                 Text="Add Client"
                 WidthRequest="200"
                 Margin="5"
-                BackgroundColor="LightCyan"
                 Command="{Binding AddClientCommand}">
                 <Button.ImageSource>
-                    <FontImageSource FontFamily="FAS" Color="Black" Glyph="&#xf067;" Size="18" />
+                    <FontImageSource Color="Black" Glyph="&#xf067;" />
                 </Button.ImageSource>
             </Button>
 
-            <Grid Grid.Row="1" BackgroundColor="LightCyan" ColumnDefinitions="1*, 2*, 2*, 1*, 3*, 0.8*, 0.8*">
+            <Grid Grid.Row="1" Style="{StaticResource MainGrid}" ColumnDefinitions="1*, 2*, 2*, 1*, 3*, 0.8*, 0.8*">
                 <Label Grid.Column="0" Text="ID" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center"/>
                 <Label Grid.Column="1" Text="Name" FontAttributes="Bold" VerticalOptions="Center"/>
                 <Label Grid.Column="2" Text="LastName" FontAttributes="Bold" VerticalOptions="Center"/>
@@ -53,39 +41,38 @@
 
                 <CollectionView.EmptyView>
                     <Label Text="No clients were registered!"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       FontSize="20"
-                       FontAttributes="Bold"
-                       Padding="50" />
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           Padding="50" />
                 </CollectionView.EmptyView>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Client">
                         <Grid ColumnDefinitions="1*, 2*, 2*, 1*, 3*, 0.8*, 0.8*" Padding="5"
                               RowDefinitions="auto"
-                              BackgroundColor="LightCyan">
-                            <Label Grid.Column="0" BackgroundColor="Transparent" Text="{Binding ID}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                            <Label Grid.Column="1" BackgroundColor="Transparent" Text="{Binding Name}" VerticalOptions="Center"/>
-                            <Label Grid.Column="2" BackgroundColor="Transparent" Text="{Binding LastName}" VerticalOptions="Center"/>
-                            <Label Grid.Column="3" BackgroundColor="Transparent" Text="{Binding Age}" VerticalOptions="Center" HorizontalOptions="Center"/>
-                            <Label Grid.Column="4" BackgroundColor="Transparent" Text="{Binding Address}" VerticalOptions="Center"/>
+                              Style="{StaticResource DataGrid}">
+                            <Label Grid.Column="0" Text="{Binding ID}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="1" Text="{Binding Name}" VerticalOptions="Center"/>
+                            <Label Grid.Column="2" Text="{Binding LastName}" VerticalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding Age}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="4" Text="{Binding Address}" VerticalOptions="Center"/>
 
                             <ImageButton Grid.Column="5"
-                                     BackgroundColor="LightCyan"
                                      Command="{Binding Source={x:Reference ClientsCollection}, Path=BindingContext.UpdateClientCommand}"
                                      CommandParameter="{Binding .}">
                                 <ImageButton.Source>
-                                    <FontImageSource FontFamily="FAS" Color="Black" Glyph="&#xf044;" Size="18" />
+                                    <FontImageSource Glyph="&#xf044;" />
                                 </ImageButton.Source>
                             </ImageButton>
 
                             <ImageButton Grid.Column="6"
-                                     BackgroundColor="LightCyan"
                                      Command="{Binding Source={x:Reference ClientsCollection}, Path=BindingContext.DeleteClientCommand}"
                                      CommandParameter="{Binding .}">
                                 <ImageButton.Source>
-                                    <FontImageSource FontFamily="FAS" Color="Black" Glyph="&#xf1f8;" Size="18" />
+                                    <FontImageSource Glyph="&#xf1f8;" />
                                 </ImageButton.Source>
                             </ImageButton>
                         </Grid>
@@ -94,7 +81,5 @@
             </CollectionView>
         </Grid>
     </Grid>
-
-
 
 </ContentPage>

@@ -18,4 +18,8 @@ public partial class ClientListPage : ContentPage
         }
     }
 
+    private void ImageButton_Focused(object sender, FocusEventArgs e)
+    {
+
+    }
 }
