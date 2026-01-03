@@ -17,9 +17,4 @@ public partial class ClientListPage : ContentPage
             vm.GetClientsCommand.Execute(null);
         }
     }
-
-    private void ImageButton_Focused(object sender, FocusEventArgs e)
-    {
-
-    }
 }

@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace developer_evaluation_mvvm_di.ViewModel
 {
-    public partial class ClientListViewModel : BaseViewModel
+    public partial class ClientListViewModel
     {
         private readonly IClientService clientService;
         public ObservableCollection<Client> Clients { get; } = new();
@@ -18,7 +18,6 @@ namespace developer_evaluation_mvvm_di.ViewModel
         public Command DeleteClientCommand { get; }
         public ClientListViewModel(IClientService clientService)
         {
-            Title = "Client List";
             this.clientService = clientService;           
 
             GetClientsCommand = new Command(async () =>
@@ -55,6 +54,5 @@ namespace developer_evaluation_mvvm_di.ViewModel
                 Clients.Remove(client);
             });
         }
-
     }
 }

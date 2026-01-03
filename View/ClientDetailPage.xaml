@@ -12,17 +12,17 @@
                WidthRequest="300">
 
             <StackLayout Spacing="10">
-
-                <Entry Placeholder="Name" Text="{Binding Client.Name}" />
-                <Entry Placeholder="Last Name" Text="{Binding Client.LastName}" />
-                <Entry Placeholder="Age" Text="{Binding Client.Age}" Keyboard="Numeric" />
-                <Entry Placeholder="Address" Text="{Binding Client.Address}" />
+                <Label Text="{Binding ValidationMessage}"
+                       IsVisible="{Binding HasErrors}"
+                       TextColor="Red"/>
+                <Entry Placeholder="Name" Text="{Binding Name}"/>
+                <Entry Placeholder="Last Name" Text="{Binding LastName}"/>
+                <Entry Placeholder="Age" Text="{Binding Age}" Keyboard="Numeric" />
+                <Entry Placeholder="Address" Text="{Binding Address}" />
 
                 <Button Text="Save" Command="{Binding SaveClientCommand}" />
                 <Button Text="Cancel" Command="{Binding CancelCommand}" />
-
             </StackLayout>
-
         </Frame>
     </Grid>
     
